@@ -1,0 +1,18 @@
+<div class="stick">
+  <div class="primary-sidebar">
+    <aside class="widget">
+      <h3 class="widget-title text-uppercase text-center">Popular Posts</h3>
+      <% popular_post.each do |f| %>
+      <div class="popular-post">
+        <a href="/posts/<%= f.id %>" class="popular-img"><img src="/assets/p1.jpg" alt="">
+          <div class="p-overlay"></div>
+        </a>
+        <div class="p-content">
+          <a href="#" class="text-uppercase"><%= f.title %></a>
+          <span class="p-date"><%= f.created_at.strftime('%b %d, %Y') %></span>
+        </div>
+      </div>
+      <% end %>
+    </aside>
+  </div>
+</div>

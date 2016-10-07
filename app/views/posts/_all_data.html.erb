@@ -1,0 +1,34 @@
+<% if @posts.present? %>
+<% @posts = post%>
+<% @posts.each do |post| %>
+  <article class="post">
+    <div class="post-thumb">
+      <a href="<%= post_path(post) %>"><img src="/assets/blog-1.jpg" alt=""></a>
+    </div>
+    <div class="post-content">
+      <header class="entry-header text-center text-uppercase">
+        <h6><a href="#"> <%= post.created_at.strftime('%b %d, %Y') %></a></h6>
+        <h1 class="entry-title"><a href="#"><%= post.title %></a></h1>
+      </header>
+      <div class="entry-content">
+        <%= raw post.body.truncate(2000)%>
+      </div>
+      <div class="decoration">
+        <%= link_to "READ MORE", post_path(post), class:"btn btn-default" %>
+        <%= link_to "EDIT",  edit_post_path(post), class:"btn btn-default" %>
+      </div>
+  
+      <div class="social-share">
+        <span class="social-share-title pull-left text-capitalize">By Rubel On February 12, 2016</span>
+        <ul class="text-center pull-right">
+          <li><a class="s-facebook" href=""><i class="fa fa-facebook"></i></a></li>
+          <li><a class="s-twitter" href=""><i class="fa fa-twitter"></i></a></li>
+          <li><a class="s-google-plus" href=""><i class="fa fa-google-plus"></i></a></li>
+          <li><a class="s-linkedin" href=""><i class="fa fa-linkedin"></i></a></li>
+          <li><a class="s-instagram" href=""><i class="fa fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </article>
+<% end %>
+<% end %>

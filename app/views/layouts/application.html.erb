@@ -1,0 +1,30 @@
+<!--http://demo.shapedtheme.com/kotha-pro-html/blog.html-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id='ajax_loader' style="position: fixed; left: 50%; top: 50%; display: none; z-index: 9999999;">
+    <div class="modal-backdrop fade in"></div>
+    <img src="/assets/ajax-loader.gif">
+  </div>
+<%= render partial: 'layouts/nav'%>
+<div class="main-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+<%= yield %>
+</div>
+<div class="col-md-4">
+  <%= render partial: 'layouts/side'%>
+</div>
+</div>
+</div>
+</div>
+<%= render partial: 'layouts/footer'%>
+</body>
+</html>
